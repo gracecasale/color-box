@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { HuePicker } from 'react-color'; 
 import './App.css';
 
 class App extends Component {
@@ -12,9 +13,9 @@ class App extends Component {
     this.changeBackground = this.changeBackground.bind(this);
   }
 
-  onColorSelect(event) {
+  onColorSelect(color, event) {
     this.setState({
-      selectedColor: event.target.value
+      selectedColor: color.hex
     });
   }
   changeBackground(event) {
@@ -34,10 +35,7 @@ class App extends Component {
 
         <main className="App-main">
           <div className="box" onClick={this.changeBackground} style={boxStyles}></div>
-          <input type="color"
-            value={this.state.selectedColor}
-            onChange={this.onColorSelect}
-            className="color-selector" />
+          <HuePicker onChange={this.onColorSelect} color={this.state.selectedColor} />
         </main>
 
         <footer className="App-footer">

@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "react": "^16.6.0",
+    "react-color": "^2.14.1",
     "react-dom": "^16.6.0",
     "react-scripts": "2.1.0"
   },
@@ -12,7 +13,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build", 
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build/"
   },
   "eslintConfig": {
@@ -27,7 +28,5 @@
   "devDependencies": {
     "gh-pages": "^2.0.1"
   },
-
-  "homepage" : "https://gracecasale.github.io/color-box"
-
+  "homepage": "https://gracecasale.github.io/color-box"
 }
