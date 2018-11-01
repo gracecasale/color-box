@@ -9,6 +9,7 @@ class App extends Component {
       selectedColor: '#ffff00'
     };
     this.onColorSelect = this.onColorSelect.bind(this);
+    this.changeBackground = this.changeBackground.bind(this);
   }
 
   onColorSelect(event) {
@@ -16,7 +17,15 @@ class App extends Component {
       selectedColor: event.target.value
     });
   }
+  changeBackground(event) {
+    this.setState({
+      boxColor: this.state.selectedColor
+    });
+  }
   render() {
+    const boxStyles = {
+      backgroundColor: this.state.boxColor
+    }
     return (
       <div className="App-container">
         <header className="App-header">
@@ -24,7 +33,7 @@ class App extends Component {
         </header>
 
         <main className="App-main">
-          <div className="box"></div>
+          <div className="box" onClick={this.changeBackground} style={boxStyles}></div>
           <input type="color"
             value={this.state.selectedColor}
             onChange={this.onColorSelect}
